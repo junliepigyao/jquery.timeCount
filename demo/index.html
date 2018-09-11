@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>time count</title>
+	<script src="../lib/jquery.min.js"></script>
+	<script type="text/javascript" src="../lib/jquery.timeCount.js"></script>
+
+	<style>
+
+		@font-face {
+		font-family: digit;
+		src: url('digital-7_mono.ttf') format("truetype");
+	}
+	
+	html,body{
+		width:100%;
+		height:100%;
+		margin:0;
+		padding:0;
+		background: #363f48;
+		color: white;
+		font: normal 12px 'Open Sans', sans-serif;
+		margin-top: 20px;
+	}
+	body {
+		overflow: hidden;
+	}
+	.time-title{
+		padding: 120px 0 0 50px;
+		font-size: 51px;
+		text-align: center;
+	}
+	.countdown-box, .timecount-box{
+		width: 50%;
+		float: left;
+	}
+	ul.time-box {
+		list-style: none;
+		margin: 75px 0;
+		padding: 0;
+		display: block;
+		text-align: center;
+	}
+
+	ul.time-box li {
+		display: inline-block;
+	}
+
+	ul.time-box li span {
+		font-size: 80px;
+		font-weight: 300;
+		line-height: 80px;
+	}
+
+	ul.time-box li.seperator {
+		font-size: 80px;
+		line-height: 70px;
+		vertical-align: top;
+	}
+
+	ul.time-box li p {
+		color: #a7abb1;
+		font-size: 14px;
+	}
+  </style>
+</head>
+
+<body>
+	<div class="countdown-box">
+		<pre>
+			$('.countdown').timeCount({
+				date: '1/1/2019 00:00:00',
+				countdown: true,
+			}, function () {
+				alert('倒计时结束!');
+			});
+		</pre>
+		<div class="time-title">倒计时：</div>
+		<ul class="countdown time-box">
+			<li> <span class="days">00</span>
+				<p class="days_ref">days</p>
+			</li>
+			<li class="seperator">.</li>
+			<li> <span class="hours">00</span>
+				<p class="hours_ref">hours</p>
+			</li>
+			<li class="seperator">:</li>
+			<li> <span class="minutes">00</span>
+				<p class="minutes_ref">minutes</p>
+			</li>
+			<li class="seperator">:</li>
+			<li> <span class="seconds">00</span>
+				<p class="seconds_ref">seconds</p>
+			</li>
+		</ul>
+	</div>
+	<div class="timecount-box">
+		<pre>
+			$('.timecount').timeCount({
+				date: '1/1/2019 00:00:00',
+				countdown: false,
+			}, function () {
+				alert('时间超过当前,请使用倒计时!');
+			});
+		</pre>
+		<div class="time-title">时间差：</div>
+		<ul class="timecount time-box">
+			<li> <span class="days">00</span>
+				<p class="days_ref">days</p>
+			</li>
+			<li class="seperator">.</li>
+			<li> <span class="hours">00</span>
+				<p class="hours_ref">hours</p>
+			</li>
+			<li class="seperator">:</li>
+			<li> <span class="minutes">00</span>
+				<p class="minutes_ref">minutes</p>
+			</li>
+			<li class="seperator">:</li>
+			<li> <span class="seconds">00</span>
+				<p class="seconds_ref">seconds</p>
+			</li>
+		</ul>
+	</div>
+	<script class="source" type="text/javascript">
+		$('.countdown').timeCount({
+			date: '1/1/2019 00:00:00',
+			countdown: true,
+		}, function () {
+			alert('倒计时结束!');
+		});
+		$('.timecount').timeCount({
+			date: '1/1/2019 00:00:00',
+			countdown: false,
+		}, function () {
+			alert('时间超过当前,请使用倒计时!');
+		});
+	</script>
+
+</body>
+
+</html>
